@@ -3,3 +3,120 @@
 @tailwind components;
 
 @tailwind utilities;
+
+@layer base {
+
+    /* --color-[color state then name - number] */
+    /* ex. Primary Forest Green = --color-pfg-01 */
+    :root {
+
+        /* Primary Forest Green */
+        --color-forestgreen-01: #8CD5B6;
+        --color-forestgreen-02: #75CDA7;
+        --color-forestgreen-03: #5EC499;
+        --color-forestgreen-04: #47BC8A;
+        --color-forestgreen-05: #30B37C;
+        --color-forestgreen-06: #19AB6D;
+        --color-forestgreen-07: #179A62;
+        --color-forestgreen-08: #148957;
+        --color-forestgreen-09: #12784C;
+        --color-forestgreen-10: #0F6741;
+
+        /* Primary Dark Autumn Pine Green */
+        --color-autumnpinegreen-01: #8BC3B9;
+        --color-autumnpinegreen-02: #73B7AB;
+        --color-autumnpinegreen-03: #5CAB9D;
+        --color-autumnpinegreen-04: #459F8F;
+        --color-autumnpinegreen-05: #2D9381;
+        --color-autumnpinegreen-06: #168773;
+        --color-autumnpinegreen-07: #147A68;
+        --color-autumnpinegreen-08: #126C5C;
+        --color-autumnpinegreen-09: #0F5F51;
+        --color-autumnpinegreen-10: #0D5145;
+
+        /* Secondary Sunlight Green */
+        --color-sunlightgreen-01: #C9DE9B;
+        --color-sunlightgreen-02: #BED786;
+        --color-sunlightgreen-03: #B3D172;
+        --color-sunlightgreen-04: #A9CA5E;
+        --color-sunlightgreen-05: #9EC44A;
+        --color-sunlightgreen-06: #93BD36;
+        --color-sunlightgreen-07: #84AA31;
+        --color-sunlightgreen-08: #76972B;
+        --color-sunlightgreen-09: #678426;
+        --color-sunlightgreen-10: #587120;
+
+        /* Secondary Light Spring Yellow */
+        --color-springyellow-01: #E4EC9E;
+        --color-springyellow-02: #DFE88B;
+        --color-springyellow-03: #D9E477;
+        --color-springyellow-04: #D4E064;
+        --color-springyellow-05: #CEDC50;
+        --color-springyellow-06: #C9D83D;
+        --color-springyellow-07: #B5C237;
+        --color-springyellow-08: #A1AD31;
+        --color-springyellow-09: #8D972B;
+        --color-springyellow-10: #798225;
+
+        /* Neutrals */
+        --color-neutrals-01: #ffffff;
+        --color-neutrals-02: #FAFAFA;
+        --color-neutrals-03: #F5F5F5;
+        --color-neutrals-04: #E8E8E8;
+        --color-neutrals-05: #D9D9D9;
+        --color-neutrals-06: #BFBFBF;
+        --color-neutrals-07: #8C8C8C;
+        --color-neutrals-08: #595959;
+        --color-neutrals-09: #262626;
+        --color-neutrals-10: #0D0D0D;
+
+        /* Info */
+        --color-info-01: #E7F3FC;
+        --color-info-02: #C4E2F7;
+        --color-info-03: #9CCEF2;
+        --color-info-04: #74BAED;
+        --color-info-05: #57ACE9;
+        --color-info-06: #399DE5;
+        --color-info-07: #3395E2;
+        --color-info-08: #2C8BDE;
+        --color-info-09: #2481DA;
+        --color-info-10: #176FD3;
+
+        /* Success */
+        --color-success-01: #F2FAE9;
+        --color-success-02: #E0F3C8;
+        --color-success-03: #CBEBA3;
+        --color-success-04: #B6E27E;
+        --color-success-05: #A6DC63;
+        --color-success-06: #96D647;
+        --color-success-07: #8ED140;
+        --color-success-08: #83CC37;
+        --color-success-09: #79C62F;
+        --color-success-10: #68BC20;
+
+        /* Warning */
+        --color-warning-01: #FFF9E0;
+        --color-warning-02: #FFF0B3;
+        --color-warning-03: #FFE680;
+        --color-warning-04: #FFDB4D;
+        --color-warning-05: #FFD426;
+        --color-warning-06: #FFCC00;
+        --color-warning-07: #FFC700;
+        --color-warning-08: #FFC000;
+        --color-warning-09: #FFB900;
+        --color-warning-10: #FFAD00;
+
+        /* Error */
+        --color-error-01: #FDE7E0;
+        --color-error-02: #F9C3B3;
+        --color-error-03: #F59C80;
+        --color-error-04: #F1744D;
+        --color-error-05: #EE5626;
+        --color-error-06: #EB3800;
+        --color-error-07: #E93200;
+        --color-error-08: #E52B00;
+        --color-error-09: #E22400;
+        --color-error-10: #DD1700;
+
+    }
+}

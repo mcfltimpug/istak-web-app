@@ -1,6 +1,6 @@
 <template>
-  <div class="home flex flex-col justify-center items-center h-screen">
-    <div class="text-white uppercase text-sm font-bold px-4 bg-green-400 py-1 rounded-full">(On-going)</div>
+  <div class="home flex flex-col justify-center items-center pt-24 pb-16 ">
+    <div class="text-white uppercase text-sm font-bold px-4 py-1 rounded-full bg-gradient-to-r from-brand-6 to-secondary-6">(On-going)</div>
     <HelloWorld msg="ISTAK Development"/>
     
   </div>
@@ -20,9 +20,10 @@
 
   .home::after {
     content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.207);
     z-index: 1;
   }
