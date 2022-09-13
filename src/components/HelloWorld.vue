@@ -1,7 +1,7 @@
 <template>
   <div class="hello flex flex-col gap-4">
     <h1 class="text-3xl font-bold text-white">{{ msg }}</h1>
-    <div class="w-[800px] bg-neutrals-1 rounded p-4 flex flex-col justify-start items-start text-left"> 
+    <div class="w-[800px] bg-neutrals-1 rounded px-4 py-8 flex flex-col justify-start items-start text-left"> 
       <div class="font-bold text-sm uppercase text-neutrals-8 text-left">Design System</div>
       <div class="text-4xl font-bold text-neutrals-10 mb-2">Colors</div>
       <p class=" mb-4 ">We use colors purposefully to communicate how things function in the interface. This helps us create visual patterns that can make interacting with users easier and more predictable.</p>
@@ -123,23 +123,44 @@
       </div>
 
       <div class="font-bold text-sm uppercase text-neutrals-10 mb-4 text-left">Form Style</div>
-      <div >
-        <label for="input" class="block text-sm font-medium text-neutral-9 mb-2">Input Label</label>
-        <input type="text" name="input" class="w-full border border-neutrals-4 rounded shadow-sm px-3 py-2 focus:outline-none focus:border-secondary-6 focus:ring-1 focus:ring-brand-6">
-      </div>
-      <div>
-        <label for="select" class="block text-sm font-medium text-neutral-9 mb-2">Select Input</label>
-        <select name="select" id="select" class="appearance-none w-full border border-neutrals-4 rounded shadow-sm px-3 py-2 focus:outline-none focus:border-secondary-6 focus:ring-1 focus:ring-brand-6">
-          <option value="">Select Value</option>
-          <option value="">Cassandra Kathrina Brucelo</option>
-          <option value="">Louie Jocson</option>
-          <option value="">Christine Faith Timpug</option>
-        </select>
+      <div class="w-[300px] flex flex-col gap-3 mb-4">
+        <div class="w-full">
+          <label for="input" class="block text-sm font-medium text-neutrals-9 mb-2">Input Label</label>
+          <input type="text" name="input" class="">
+        </div>
+        <div class="w-full">
+          <label for="select" class="block text-sm font-medium text-neutrals-9 mb-2">Select Input</label>
+          <select name="select" id="select" class="">
+            <option value="">Select Value</option>
+            <option value="">Cassandra Kathrina Brucelo</option>
+            <option value="">Louie Jocson</option>
+            <option value="">Christine Faith Timpug</option>
+          </select>
+        </div>
+
+        <div class="flex items-center">
+          <input id="terms-and-privacy" name="terms-and-privacy" type="checkbox" class="" />
+          <label for="terms-and-privacy" class="ml-2 block text-sm font-medium text-neutrals-9 "
+            >I agree to the
+            <a href="#" class="text-brand-6 hover:text-brand-8">Terms</a>
+            and
+            <a href="#" class="text-brand-6 hover:text-brand-8">Privacy Policy</a>.
+          </label>
+        </div>
       </div>
 
 
       <div class="font-bold text-sm uppercase text-neutrals-10 mb-4 text-left">Button Style</div>
-      <!-- Here sa button tin -->
+      <div class="flex gap-4 no-wrap w-full">
+        <button type="submit" class="assumpta-gradient w-1/3">Button Primary</button>
+        <button class="w-1/3 assumpta-btn-secondary">
+          <span class="w-full assumpta-btn-span">
+             Button Secondary
+          </span>
+        </button>
+        <button type="submit" class="assumpta-gradient w-1/3">Button Primary</button>
+      </div>
+        
     </div>
   </div>
 </template>
