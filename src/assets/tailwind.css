@@ -155,5 +155,13 @@
     .assumpta-btn-span {
         @apply px-5 py-3 h-full inline-flex items-center justify-center  transition-all ease-in duration-75 bg-white rounded-md text-xs font-medium uppercase;
     }
+
+    .assumpta-btn-primary-disabled {
+        @apply inline-flex items-center justify-center py-3 px-5 border border-transparent rounded-md text-xs font-medium uppercase text-neutrals-1 bg-neutrals-5;
+    }
+
+    .assumpta-btn-secondary-disabled {
+        @apply inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-neutrals-5 rounded-lg bg-neutrals-5;
+    }
 }
 

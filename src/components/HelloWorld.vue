@@ -151,14 +151,22 @@
 
 
       <div class="font-bold text-sm uppercase text-neutrals-10 mb-4 text-left">Button Style</div>
-      <div class="flex gap-4 no-wrap w-full">
+      <div class="flex gap-4 no-wrap w-full mb-4">
         <button type="submit" class="assumpta-gradient w-1/3">Button Primary</button>
-        <button class="w-1/3 assumpta-btn-secondary">
+        <button type="submit" class="assumpta-btn-primary-disabled w-1/3">Disabled Button</button>
+       
+      </div>
+      <div class="flex gap-4 no-wrap w-full mb-4">
+         <button class="w-1/3 assumpta-btn-secondary">
           <span class="w-full assumpta-btn-span">
              Button Secondary
           </span>
         </button>
-        <button type="submit" class="assumpta-gradient w-1/3">Button Primary</button>
+        <button class="w-1/3 assumpta-btn-secondary-disabled">
+          <span class="w-full assumpta-btn-span">
+             Button Secondary
+          </span>
+        </button>
       </div>
         
     </div>
