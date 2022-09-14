@@ -147,6 +147,19 @@
             <a href="#" class="text-brand-6 hover:text-brand-8">Privacy Policy</a>.
           </label>
         </div>
+        <div class="flex items-center gap-4">
+          <div class="flex justify-center">
+             <input id="branch" name="branch" type="radio" class="" />
+              <label for="branch" class="ml-2 block text-sm font-medium text-neutrals-9 ">Cainta Branch
+              </label>
+          </div>
+          <div class="flex justify-center"> 
+             <input id="branch" name="branch" type="radio" class="" />
+              <label for="branch" class="ml-2 block text-sm font-medium text-neutrals-9 ">Antipolo Branch
+              </label>
+          </div>
+          
+        </div>
       </div>
 
 

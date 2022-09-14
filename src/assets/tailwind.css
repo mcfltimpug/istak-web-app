@@ -138,9 +138,11 @@
         @apply w-full border-neutrals-4 text-sm focus:border-secondary-6 rounded-sm focus:ring-brand-6;
     }
 
-    [type="checkbox"],
-    [type="radio"] {
+    [type="checkbox"] {
         @apply rounded border-neutrals-4 text-secondary-6 focus:ring-brand-6;
+    }
+    [type="radio"] {
+        @apply rounded-full border-neutrals-4 text-secondary-6 focus:ring-brand-6;
     }
 
     .assumpta-gradient {
