@@ -145,6 +145,9 @@
         @apply rounded-full border-neutrals-4 text-secondary-6 focus:ring-brand-6;
     }
 
+    .textarea-field{
+        @apply block p-2.5 w-full text-sm bg-white rounded-lg border border-neutrals-5 focus:ring-brand-6 focus:border-brand-6
+    }
     .assumpta-gradient {
         @apply inline-flex items-center justify-center py-3 px-5 border border-transparent rounded-md text-xs font-medium uppercase text-white
         bg-gradient-to-r from-brand-6 to-secondary-6 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-6 hover:from-brand-5 hover:to-secondary-5;

@@ -137,7 +137,10 @@
             <option value="">Christine Faith Timpug</option>
           </select>
         </div>
-
+        <div class="w-full">
+          <label for="input" class="block text-sm font-medium text-neutrals-9 mb-2">Textarea Label</label>
+          <textarea id="message" rows="4" class="textarea-field" placeholder="Your message..."></textarea>
+        </div>
         <div class="flex items-center">
           <input id="terms-and-privacy" name="terms-and-privacy" type="checkbox" class="" />
           <label for="terms-and-privacy" class="ml-2 block text-sm font-medium text-neutrals-9 "
