@@ -3,16 +3,15 @@
 //   transpileDependencies: true
 // })
 
-// module.exports = {
-
-//   configureWebpack: {
-//     devServer: {
-//       historyApiFallback: true
-//     }
-//   }
-
-// };
-
 module.exports = {
-  publicPath: ''
-}
+  configureWebpack: {
+    devServer: {
+      historyApiFallback: true
+    }
+  }
+
+};
+
+// module.exports = {
+//   publicPath: ''
+// }
