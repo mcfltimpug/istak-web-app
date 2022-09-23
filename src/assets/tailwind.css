@@ -165,5 +165,14 @@
     .assumpta-btn-secondary-disabled {
         @apply inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-neutrals-5 rounded-lg bg-neutrals-5;
     }
+    .sidebar-bg-color {
+        @apply bg-neutrals-1;
+    }
+    .sidebar-item-hover {
+        @apply bg-brand-6;
+    }
+    .sidebar-item-active {
+        @apply bg-gradient-to-br from-brand-6 to-secondary-6;
+    }
 }
 
