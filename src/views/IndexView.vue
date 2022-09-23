@@ -39,36 +39,38 @@
 
       <div class="login-form w-full  flex justify-center items-center -mt-44 md:mt-0">
         <div class="flex flex-col justify-center w-3/4 md:w-2/3">
-            <div class="flex justify-center w-full">
-              <img src="../assets/assumpta-horizontal-logo.png" alt="" class="h-12 mb-10">
+          <div class="flex justify-center w-full">
+            <img src="../assets/assumpta-horizontal-logo.png" alt="" class="h-12 mb-10">
+          </div>
+          <div class="w-full flex flex-col gap-3 mb-4">
+            <div class="relative flex items-center">
+              <input type="text" name="input" class="pr-3 pl-10" placeholder="Enter Username">
             </div>
-            <div class="w-full flex flex-col gap-3 mb-4">
-              <div class="relative flex items-center">
-                <input type="text" name="input" class="pr-3 pl-10" placeholder="Enter Username">
-              </div>
-              <img src="../assets/user_icon.svg" class="w-5 h-5 absolute ml-3 mt-2" alt="User Icon" />
-            </div>
-            <div class="w-full flex flex-col gap-3 mb-4">
-              <div class="w-full">
-                <label for="input" class="block w-full text-sm font-medium text-neutrals-9 mb-2"></label>
-                <input type="text" name="input" class="pr-3 pl-10" placeholder="Enter Password">
-              </div>
-              <img src="../assets/user_pass_icon.svg" class="w-5 h-5 absolute ml-3 mt-4" alt="UserPass Icon" />
-            </div>
-            <div class="flex justify-between w-full">
-              <div class="flex">
-                <input id="terms-and-privacy" name="terms-and-privacy" type="checkbox" class="" />
-                <label for="terms-and-privacy" class="mr-20 ml-2 block text-xs font-medium text-neutrals-9 hover:text-neutrals-8">Remember Me
-                </label>
-              </div>
-              <div>
-                <a href="" class="text-xs font-medium text-brand-6 hover:text-brand-5">Forgot Password?</a>
-              </div>
-            </div>
+            <img src="../assets/user_icon.svg" class="w-5 h-5 absolute ml-3 mt-2" alt="User Icon" />
+          </div>
+          <div class="w-full flex flex-col gap-3 mb-4">
             <div class="w-full">
-                <button type="submit" class="font-bold block w-full px-4 py-2 mt-4 text-sm assumpta-gradient mb-3">Sign In</button>
+              <label for="input" class="block w-full text-sm font-medium text-neutrals-9 mb-2"></label>
+              <input type="text" name="input" class="pr-3 pl-10" placeholder="Enter Password">
             </div>
-            
+            <img src="../assets/user_pass_icon.svg" class="w-5 h-5 absolute ml-3 mt-4" alt="UserPass Icon" />
+          </div>
+          <div class="flex justify-between w-full">
+            <div class="flex">
+              <input id="terms-and-privacy" name="terms-and-privacy" type="checkbox" class="" />
+              <label for="terms-and-privacy"
+                class="mr-20 ml-2 block text-xs text-neutrals-9 hover:text-neutrals-8">Remember Me
+              </label>
+            </div>
+            <div>
+              <a href="" class="text-xs font-medium text-brand-6 hover:text-brand-5">Forgot Password?</a>
+            </div>
+          </div>
+          <div class="w-full">
+            <button type="submit" class="font-bold block w-full px-4 py-2 mt-4 text-sm assumpta-gradient mb-3">Sign
+              In</button>
+          </div>
+
 
         </div>
       </div>
@@ -79,55 +81,56 @@
 </template>
 
 <style scoped>
-  #app {
-    width: 100vw;
-    height: 100vh;
-  }
+#app {
+  width: 100vw;
+  height: 100vh;
+}
 
-  .login-page{
-    overflow: hidden;
-  }
-  .home>* {
-    z-index: 100;
-  }
+.login-page {
+  overflow: hidden;
+}
 
-  .home {
-    background-image: url("https://assumptaclinic.com/wp-content/uploads/2022/08/bg_left.png");
-    background-repeat: repeat;
-    background-attachment: fixed;
-    background-position: center;
-    z-index: 2;
-    width: 100vw;
-    height: 100vh;
+.home>* {
+  z-index: 100;
+}
 
-  }
+.home {
+  background-image: url("https://assumptaclinic.com/wp-content/uploads/2022/08/bg_left.png");
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position: center;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
 
-  .home::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.207);
-    z-index: 1;
-  }
+}
 
-  .side-header {
-    background-image: url("../assets/login-header-0.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: 2;
-    width: 50vw;
-    border-radius: 14px;
+.home::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.207);
+  z-index: 1;
+}
 
-  }
+.side-header {
+  background-image: url("../assets/login-header-0.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2;
+  width: 50vw;
+  border-radius: 14px;
+
+}
 </style>
 
 <script>
-  // @ is an alias to /src
+// @ is an alias to /src
 
-  export default {
-    name: 'IndexView',
+export default {
+  name: 'IndexView',
 
-  }
+}
 </script>

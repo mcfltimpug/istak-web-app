@@ -7,12 +7,15 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: IndexView,
+    meta: {
+      hideSidebar: true,
+    }
   },
   {
-    path: '/login',
-    name: 'login',
-    component: IndexView
+    path: '/design-system',
+    name: 'design',
+    component: HomeView
   },
   {
     path: '/dashboard',
@@ -30,7 +33,7 @@ const routes = [
   {
     path: "/:catchAll(.*)",
     name: "home",
-    component: HomeView,
+    component: IndexView,
     meta: {
       requiresAuth: false
     }

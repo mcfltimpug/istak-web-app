@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const { fontFamily } = require('tailwindcss/defaultTheme')
 module.exports = {
   content: ['./public/**/*.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
@@ -120,6 +121,15 @@ module.exports = {
           09: "var( --color-error-09)",
           10: "var( --color-error-10)",
         },
+      },
+      fontFamily: {
+        sans: [
+          '"Roboto"',
+          'sans-serif',
+          ...fontFamily.sans,
+        ],
+        roboto: "'Roboto', sans-serif",
+        jost: "'Jost', sans-serif"
       }
     },
   },
