@@ -23,7 +23,7 @@
     </div>
 
     <div class="flex flex-col-reverse md:flex-row lg:flex-row w-screen ">
-      <div class=" w-full h-screen relative">
+      <div class=" w-full h-screen relative hidden md:block">
         <div class="w-full relative z-0">
           <div class="w-full absolute left-1 p-5">
             <img src="../assets/login-header-0.png" alt="" class="h-screen rounded-2xl">
@@ -37,10 +37,10 @@
         </div>
       </div>
 
-      <div class="login-form w-full  flex justify-center items-center">
+      <div class="login-form w-full  flex justify-center items-center mt-16">
         <div class="flex justify-center w-full sm:p-20 p-9 ">
-          <div class="w-4/4 md:w-3/4">
-            <div class="flex justify-center">
+          <div class="w-4/4 md:w-3/4 ">
+            <div class="flex justify-center ">
               <img src="../assets/assumpta-horizontal-logo.png" alt="" class="h-12 mb-10">
             </div>
             <div class="w-full flex flex-col gap-3 mb-4">
@@ -59,11 +59,11 @@
             <div class="flex justify-between">
               <div class="flex">
                 <input id="terms-and-privacy" name="terms-and-privacy" type="checkbox" class="" />
-                <label for="terms-and-privacy" class="mr-20 ml-2 block text-sm font-medium text-neutrals-9 ">Remember Me
+                <label for="terms-and-privacy" class="mr-20 ml-2 block text-xs font-medium text-neutrals-9 hover:text-neutrals-8">Remember Me
                 </label>
               </div>
               <div>
-                <a href="" class="text-sm font-medium text-brand-6">Forgot Password?</a>
+                <a href="" class="text-xs font-medium text-brand-6 hover:text-brand-5">Forgot Password?</a>
               </div>
               
             </div>
@@ -86,6 +86,9 @@
     height: 100vh;
   }
 
+  .login-page{
+    overflow: hidden;
+  }
   .home>* {
     z-index: 100;
   }
