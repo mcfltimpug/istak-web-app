@@ -11,3 +11,7 @@
     }
   }
   </script>
+
+  <style>
+    body{background-color: rgb(246, 246, 246);}
+  </style>

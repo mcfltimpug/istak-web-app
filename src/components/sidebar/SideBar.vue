@@ -18,7 +18,7 @@ export default {
 </script>
 
 <template>
-    <div class="sidebar app shadow-lg flex flex-col" :style="{ width: sidebarWidth }">
+    <div class="sidebar app shadow-lg flex flex-col bg-neutrals-1" :style="{ width: sidebarWidth }">
         <div class="nav-toggle w-full">
             <span class="collapse-icon cursor-pointer" :class="{ 'rotate-180': collapsed }" @click="toggleSidebar">
                 <i class="fa-solid fa-angles-left" />
