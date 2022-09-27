@@ -1,5 +1,10 @@
 <template>
     <div class="vax flex flex-col justify-center m-3">
+        <!-- crud modals -->
+        <EditModal @close="toggleModal" :modalActiveEdit="modalActiveEdit"/>
+        <AddModal @close="toggleModal2" :modalActiveAdd="modalActiveAdd"/>   
+        <DeleteModal @close="toggleModal3" :modalActiveDelete="modalActiveDelete"/> 
+
         <!-- remove top nav if available -->
         <div class="top-nav flex justify-between flex-row bg-neutrals-1 rounded-2xl py-2 px-3">
             <div class="left-nav flex justify-center gap-4 ">
@@ -20,8 +25,9 @@
                 </div>
             </div>
         </div>
+
         <!-- vaccines inventory -->
-        <div class="vaccines-ivt bg-neutrals-1 mt-4 rounded-lg shadow-sm pt-4 px-5">
+        <div class="vaccines-ivt bg-neutrals-1 mt-4 rounded-lg shadow-sm pt-4 px-5 h-screen">
             <div class="topbar flex justify-between p-2">
                 <div class="bar-left flex justify-center align-middle gap-4">
                     <div class="ivt-filter">
@@ -34,24 +40,26 @@
                     </div>
                 </div>
                 <div class="bar-right flex flex-row gap-2">
-                    <div class="ivt-add-item">
-                        <a href="" class="assumpta-btn-secondary"><span class=" assumpta-btn-span px-12">Add
-                                Item</span></a>
+                    <div @click="toggleModal2" class="ivt-add-item ">
+                        <a href="javascript:void(0)" class="assumpta-btn-secondary cursor-pointer">
+                            <span class=" assumpta-btn-span px-12">Add Item</span>
+                        </a>
+                        
                     </div>
                     <div class="ivt-barcode-scan">
-                        <a href="" class="assumpta-gradient px-8">Barcode Scan</a>
+                        <a href="javascript:void(0)" class="assumpta-gradient px-8">Barcode Scan</a>
                     </div>
                     <div class="ivt-pdf">
-                        <a href="" class="assumpta-round-btn-gradient"><span class="assumpta-round-btn-span">
+                        <a href="javascript:void(0)" class="assumpta-round-btn-gradient"><span class="assumpta-round-btn-span">
                                 <i class="fa-solid fa-file-pdf text-brand-6 h-4"></i>
                             </span></a>
                     </div>
                     <div class="ivt-edit-item">
-                        <a href="" class="assumpta-round-btn-edit"><span class="assumpta-round-btn-span"><i
+                        <a href="javascript:void(0)" class="assumpta-round-btn-edit"><span class="assumpta-round-btn-span"><i
                                     class="fa-solid fa-pen-to-square text-brand-6 h-4"></i></span></a>
                     </div>
                     <div class="ivt-delete-item">
-                        <a href="" class="assumpta-round-btn-delete"><span class="assumpta-round-btn-span"><i
+                        <a href="javascript:void(0)" class="assumpta-round-btn-delete"><span class="assumpta-round-btn-span"><i
                                     class="fa-solid fa-trash text-error-6 h-4"></i></span></a>
                     </div>
                 </div>
@@ -77,8 +85,8 @@
                             <td><input type="checkbox" name="" id="" class="w-5 h-5 border border-neutrals-6"></td>
                             <td>0123456789</td>
                             <td>NOBIVAC DHPPI L4 (CANINE)</td>
-                            <td class="inline-flex justify-center"><img src="../assets/vax-image.png" alt=""
-                                    srcset="" class="w-14"></td>
+                            <td class="inline-flex justify-center"><img src="../assets/vax-image.png" alt="" srcset=""
+                                    class="w-14"></td>
                             <td>A-123</td>
                             <td><span class="bg-neutrals-3 rounded-full p-2 text-brand-6">&#9679; 475</span></td>
                             <td><span class="bg-neutrals-3 rounded-full p-2 text-secondary-6">&#9679; 30</span></td>
@@ -87,21 +95,22 @@
                             </td>
                             <td class="">
                                 <div class="actions flex gap-2 justify-center">
-                                    <div class="ivt-edit-item">
-                                        <a href="" class="assumpta-round-btn-edit"><span
-                                                class="assumpta-round-btn-span"><i
-                                                    class="fa-solid fa-pen-to-square text-brand-6 h-4"></i></span></a>
+                                    <div @click="toggleModal" class="ivt-edit-item">
+                                        <a href="javascript:void(0)" class="assumpta-round-btn-edit cursor-pointer">
+                                            <span class="assumpta-round-btn-span"><i
+                                                    class="fa-solid fa-pen-to-square text-brand-6 h-4"></i></span>
+                                                    
+                                        </a>
                                     </div>
-                                    <div class="ivt-delete-item">
-                                        <a href="" class="assumpta-round-btn-delete"><span
-                                                class="assumpta-round-btn-span"><i
-                                                    class="fa-solid fa-trash text-error-6 h-4"></i></span></a>
+                                    <div @click="toggleModal3" class="ivt-delete-item">
+                                        <a href="javascript:void(0)" class="assumpta-round-btn-delete cursor-pointer">
+                                            <span class="assumpta-round-btn-span"><i class="fa-solid fa-trash text-error-6 h-4"></i></span>
+                                        </a>
                                     </div>
                                     <div v-on:click="isOpen = !isOpen" class="ivt-more-info">
-                                        <div class="assumpta-more-info-btn mt-1 cursor-pointer">
+                                        <a href="javascript:void(0)" class="assumpta-more-info-btn mt-1 cursor-pointer">
                                             <i class="fa-solid fa-ellipsis-vertical h-5 assumpta-more-info-span"></i>
-                                        </div>
-                                        
+                                        </a>
                                     </div>
                                 </div>
                             </td>
@@ -115,11 +124,13 @@
                                     <div class="info-one flex justify-center flex-col gap-3">
                                         <div class="inventory text-left flex flex-col">
                                             <span class="text-xs uppercase">Inventory</span>
-                                            <input type="text" name="input" class="h-8 w-48" placeholder="Vaccines" disabled>
+                                            <input type="text" name="input" class="h-8 w-48" placeholder="Vaccines"
+                                                disabled>
                                         </div>
                                         <div class="expiry text-left flex flex-col">
                                             <span class="text-xs uppercase">Expiry Date</span>
-                                            <input type="text" name="input" class="h-8 w-48" placeholder="12/26/2022" disabled>
+                                            <input type="text" name="input" class="h-8 w-48" placeholder="12/26/2022"
+                                                disabled>
                                         </div>
                                     </div>
                                     <div class="info-two flex justify-center flex-col gap-3">
@@ -129,32 +140,44 @@
                                         </div>
                                         <div class="item-level text-left flex flex-col">
                                             <span class="text-xs uppercase">Item Level</span>
-                                            <input type="text" name="input" class="h-8 w-48" placeholder="Normal" disabled>
+                                            <input type="text" name="input" class="h-8 w-48" placeholder="Normal"
+                                                disabled>
                                         </div>
                                     </div>
                                     <div class="info-three flex justify-center flex-col gap-3">
                                         <div class="brand text-left flex flex-col">
                                             <span class="text-xs uppercase">Brand</span>
-                                            <input type="text" name="input" class="h-8 w-48" placeholder="Nobivac" disabled>
+                                            <input type="text" name="input" class="h-8 w-48" placeholder="Nobivac"
+                                                disabled>
                                         </div>
                                         <div class="supplier text-left flex flex-col">
                                             <span class="text-xs uppercase">Supplier</span>
-                                            <input type="text" name="input" class="h-8 w-48" placeholder="ABC Supplier" disabled>
+                                            <input type="text" name="input" class="h-8 w-48" placeholder="ABC Supplier"
+                                                disabled>
                                         </div>
                                     </div>
                                 </div>
                             </td>
                         </tr>
-                       
+
                     </tbody>
                 </table>
             </div>
         </div>
+
     </div>
+
 </template>
 
 <script>
     // @ is an alias to /src
+    import EditModal from '@/components/inventory/EditModal.vue'
+    import AddModal from '@/components/inventory/AddModal.vue'
+    import DeleteModal from '@/components/inventory/DeleteModal.vue'
+
+    import {
+        ref
+    } from 'vue'
 
     export default {
         name: 'VaccinesView',
@@ -162,7 +185,38 @@
             return {
                 isOpen: false
             }
+        },
+        components: {
+            EditModal, AddModal, DeleteModal
+        },
+        setup() {
+            const modalActiveEdit = ref(false);
+            const modalActiveAdd = ref(false);
+            const modalActiveDelete = ref(false);
+
+            const toggleModal = () => {
+                modalActiveEdit.value = !modalActiveEdit.value;
+            }
+            const toggleModal2 = () => {
+                modalActiveAdd.value = !modalActiveAdd.value;
+            }
+            const toggleModal3 = () => {
+                modalActiveDelete.value = !modalActiveDelete.value;
+            }
+
+            return {
+                modalActiveEdit,
+                toggleModal,
+                modalActiveAdd,
+                toggleModal2,
+                modalActiveDelete,
+                toggleModal3
+            };
         }
 
     }
 </script>
+
+<style>
+
+</style>

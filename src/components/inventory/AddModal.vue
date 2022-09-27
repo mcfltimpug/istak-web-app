@@ -1,9 +1,9 @@
 <template>
     <transition name="modal-animation">
-        <div v-show="modalActiveEdit"
+        <div v-show="modalActiveAdd"
             class="modal bg-black shadow-md p-7 z-20 flex- justify-center align-middle h-screen w-screen fixed top-0 left-0 bg-opacity-20">
             <transition name="modal-animation-inner">
-                <div v-show="modalActiveEdit"
+                <div v-show="modalActiveAdd"
                     class="modal-inner relative max-w-2xl w-4/5 shadow-md bg-neutrals-1 p-9 top-20 left-96 rounded-lg">
                     <div @click="close" class="close-icon">
                         <i class="fa-solid fa-xmark cursor-pointer text-neutrals-5 absolute right-5 hover:text-neutrals-7" ></i>
@@ -13,80 +13,75 @@
                     <!-- <slot /> -->
                     <div class="modal-content flex flex-col justify-center align-middle gap-6">
                         <div class="headerz text-center text-brand-6">
-                            <h1>Edit Item Information</h1>
+                            <h1>Add Item Information</h1>
                         </div>
 
                         <div class="first-edit flex flex-wrap justify-center gap-6">
                             <div class="upload-img flex flex-col justify-center gap-6 px-10">
-                                <img src="../../assets/vax-image.png" class="w-32 border-4 border-brand-6 rounded-md bg-neutrals-9"
-                                    alt="">
+                                <img src="" class="w-32 h-32 border-4 border-brand-6 rounded-md bg-neutrals-5"
+                                    >
                                 <input type="file" class="hidden" id="file" accept="image/*" />
                                 <label for="file" class="file-design">Upload Photo</label>
                             </div>
                             <div class="bii flex gap-6 flex-col">
                                 <div class="barcode flex flex-col justify-center">
                                     <span class="text-xs uppercase">Barcode</span>
-                                    <input type="text" name="input" class="h-8 w-48" placeholder="0123456789">
+                                    <input type="text" name="input" class="h-8 w-48" placeholder="">
                                 </div>
                                 <div class="item-name flex flex-col justify-center">
                                     <span class="text-xs uppercase">Item Name</span>
                                     <input type="text" name="input" class="h-8 w-48"
-                                        placeholder="NOBIVAC DHPPI L4 (CANINE)">
+                                        placeholder="">
                                 </div>
                                 <div class="item-name flex flex-col justify-center">
                                     <span class="text-xs uppercase">Inventory</span>
-                                    <input type="text" name="input" class="h-8 w-48" placeholder="Vaccines">
+                                    <input type="text" name="input" class="h-8 w-48" placeholder="">
                                 </div>
                             </div>
                         </div>
                         <div class="second-edit">
                             <div class="grid grid-cols-3 gap-6">
                                 <div class="total-stocks flex flex-col justify-center">
-                                    <div class="ts-title">
-                                        <span class="text-xs uppercase">Total Stocks</span>
-                                    </div>
-                                    <div class="ts-form flex flex-row justify-center gap-1">
-                                        <input type="text" name="input" class="h-8 " placeholder="475">
-                                        <a href="" class="file-design">Add</a>
-                                    </div>
+                                    <span class="text-xs uppercase">Total Stocks</span>
+                                    <input type="text" name="input" class="h-8 w-48" placeholder="">
                                 </div>
                                 <div class="price flex flex-col justify-center">
                                     <span class="text-xs uppercase">Price</span>
-                                    <input type="text" name="input" class="h-8 w-48" placeholder="P548.59">
+                                    <input type="text" name="input" class="h-8 w-48" placeholder="">
                                 </div>
                                 <div class="low-stock flex flex-col justify-center">
                                     <span class="text-xs uppercase">Low Stock Indicator</span>
-                                    <input type="text" name="input" class="h-8 w-48" placeholder="15">
+                                    <input type="text" name="input" class="h-8 w-48" placeholder="">
                                 </div>
                                 <div class="receipts flex flex-col justify-center">
                                     <a href="" class="assumpta-btn-secondary"><span
-                                            class="assumpta-btn-span flex w-full">See
-                                            Receipts</span></a>
+                                            class="assumpta-btn-span flex w-full">Upload
+                                            First Receipt</span></a>
                                 </div>
                                 <div class="storebox flex flex-col justify-center">
                                     <span class="text-xs uppercase">Storebox</span>
-                                    <input type="text" name="input" class="h-8 w-48" placeholder="A-123">
+                                    <input type="text" name="input" class="h-8 w-48" placeholder="">
                                 </div>
                                 <div class="brand flex flex-col justify-center">
                                     <span class="text-xs uppercase">Brand</span>
-                                    <input type="text" name="input" class="h-8 w-48" placeholder="Nobivac">
+                                    <input type="text" name="input" class="h-8 w-48" placeholder="">
                                 </div>
                                 <div class="display-stocks flex flex-col justify-center">
                                     <span class="text-xs uppercase">Stocks on Display</span>
-                                    <input type="text" name="input" class="h-8 w-48" placeholder="30">
+                                    <input type="text" name="input" class="h-8 w-48" placeholder="">
                                 </div>
                                 <div class="expiry flex flex-col justify-center">
                                     <span class="text-xs uppercase">Expiry Date</span>
-                                    <input type="date" name="input" class="h-8 w-48" placeholder="11/26/2022">
+                                    <input type="date" name="input" class="h-8 w-48" placeholder="">
                                 </div>
                                 <div class="supplier flex flex-col justify-center">
                                     <span class="text-xs uppercase">Supplier</span>
-                                    <input type="text" name="input" class="h-8 w-48" placeholder="ABC Supplier">
+                                    <input type="text" name="input" class="h-8 w-48" placeholder="">
                                 </div>
                             </div>
                         </div>
                         <div class="edit-btns flex flex-row justify-center gap-2">
-                            <a href="" class="assumpta-gradient">Edit Item</a>
+                            <a href="" class="assumpta-gradient">Add Item</a>
                             <a href="" @click="close" class="assumpta-btn-secondary"><span class="assumpta-btn-span">Cancel</span></a>
                         </div>
                     </div>
@@ -98,7 +93,7 @@
 
 <script>
     export default {
-        props: ['modalActiveEdit'],
+        props: ['modalActiveAdd'],
         setup(props, {
             emit
         }) {
