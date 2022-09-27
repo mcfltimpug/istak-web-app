@@ -6,7 +6,7 @@
         <DeleteModal @close="toggleModal3" :modalActiveDelete="modalActiveDelete"/> 
 
         <!-- remove top nav if available -->
-        <div class="top-nav flex justify-between flex-row bg-neutrals-1 rounded-2xl py-2 px-3">
+        <div class="top-nav flex justify-between flex-row bg-neutrals-1 rounded-2xl py-2 px-3 overflow-x-auto">
             <div class="left-nav flex justify-center gap-4 ">
                 <div class="site-loc mt-2">
                     Inventories > <span class="text-brand-6 font-bold text-brand-6">Vaccines</span>
@@ -27,7 +27,7 @@
         </div>
 
         <!-- vaccines inventory -->
-        <div class="vaccines-ivt bg-neutrals-1 mt-4 rounded-lg shadow-sm pt-4 px-5 h-screen">
+        <div class="vaccines-ivt bg-neutrals-1 mt-4 rounded-lg shadow-sm pt-4 px-5 h-screen overflow-x-auto">
             <div class="topbar flex justify-between p-2">
                 <div class="bar-left flex justify-center align-middle gap-4">
                     <div class="ivt-filter">

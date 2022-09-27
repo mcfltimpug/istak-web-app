@@ -1,10 +1,10 @@
 <template>
     <transition name="modal-animation">
         <div v-show="modalActiveEdit"
-            class="modal bg-black shadow-md p-7 z-20 flex- justify-center align-middle h-screen w-screen fixed top-0 left-0 bg-opacity-20">
+            class="modal bg-black shadow-md p-7 z-20 flex justify-center items-center h-screen w-screen fixed top-0 left-0 bg-opacity-20">
             <transition name="modal-animation-inner">
                 <div v-show="modalActiveEdit"
-                    class="modal-inner relative max-w-2xl w-4/5 shadow-md bg-neutrals-1 p-9 top-20 left-96 rounded-lg">
+                    class="modal-inner relative max-w-2xl w-4/5 shadow-md bg-neutrals-1 p-9 rounded-lg">
                     <div @click="close" class="close-icon">
                         <i class="fa-solid fa-xmark cursor-pointer text-neutrals-5 absolute right-5 hover:text-neutrals-7" ></i>
                     </div>
