@@ -2,6 +2,8 @@
     <div class="vax flex flex-col justify-center m-3">
         <!-- crud modals -->
         <AddModal @close="toggleModalAdd" :modalActiveAdd="modalActiveAdd"/>   
+        <EditSelectedModal @close="toggleModalEditSelect" :modalActiveEditSelect="modalActiveEditSelect" />
+        <DeleteSelectedModal @close="toggleModalDeleteSelect" :modalActiveDeleteSelect="modalActiveDeleteSelect" />
 
         <!-- remove top nav if available -->
         <div class="top-nav flex justify-between flex-row bg-neutrals-1 rounded-2xl py-2 px-3 overflow-x-auto">
@@ -52,11 +54,14 @@
                                 <i class="fa-solid fa-file-pdf text-brand-6 h-4"></i>
                             </span></a>
                     </div>
-                    <div class="ivt-edit-item">
-                        <a href="javascript:void(0)" class="assumpta-round-btn-edit"><span class="assumpta-round-btn-span"><i
-                                    class="fa-solid fa-pen-to-square text-brand-6 h-4"></i></span></a>
+                    <div @click="toggleModalEditSelect" class="ivt-edit-item">
+                        <a href="javascript:void(0)" class="assumpta-round-btn-edit cursor-pointer">
+                            <span class="assumpta-round-btn-span"><i
+                            class="fa-solid fa-pen-to-square text-brand-6 h-4"></i></span>
+                                                    
+                        </a>
                     </div>
-                    <div class="ivt-delete-item">
+                    <div @click="toggleModalDeleteSelect" class="ivt-delete-item">
                         <a href="javascript:void(0)" class="assumpta-round-btn-delete"><span class="assumpta-round-btn-span"><i
                                     class="fa-solid fa-trash text-error-6 h-4"></i></span></a>
                     </div>
@@ -184,27 +189,46 @@
     // @ is an alias to /src
     import AddModal from '@/components/inventory/AddModal.vue'
     import InventoryItemList from '@/components/inventory/InventoryItemList.vue'
+    import EditSelectedModal from '@/components/inventory/EditSelectedModal.vue'
 
-     import {
+
+    import {
          ref
-     } from 'vue'
-
+    } from 'vue'
+import DeleteSelectedModal from '@/components/inventory/DeleteSelectedModal.vue'
 
     export default {
         name: 'VaccinesView',
         components: {
-            AddModal,
-            InventoryItemList
-        },
+    AddModal,
+    InventoryItemList,
+    EditSelectedModal,
+    DeleteSelectedModal
+},
          setup() {
              const modalActiveAdd = ref(false);
+             const modalActiveEditSelect = ref(false);
+             const modalActiveDeleteSelect = ref(false);
+
              const toggleModalAdd = () => {
                  modalActiveAdd.value = !modalActiveAdd.value;
              }
+  
+             const toggleModalEditSelect = () => {
+                modalActiveEditSelect.value = !modalActiveEditSelect.value;
+             }
+
+             const toggleModalDeleteSelect = () => {
+                modalActiveDeleteSelect.value = !modalActiveDeleteSelect.value;
+             }
 
          return {
-                 modalActiveAdd,
+                modalActiveAdd,
                 toggleModalAdd,
+                modalActiveEditSelect,
+                toggleModalEditSelect,
+                modalActiveDeleteSelect,
+                toggleModalDeleteSelect,
              };
         }
 
