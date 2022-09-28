@@ -18,7 +18,7 @@ export default {
 </script>
 
 <template>
-    <div class="sidebar app shadow-lg flex flex-col" :style="{ width: sidebarWidth }">
+    <div class="sidebar app shadow-lg flex flex-col bg-neutrals-1" :style="{ width: sidebarWidth }">
         <div class="nav-toggle w-full">
             <span class="collapse-icon cursor-pointer" :class="{ 'rotate-180': collapsed }" @click="toggleSidebar">
                 <i class="fa-solid fa-angles-left" />
@@ -50,8 +50,8 @@ export default {
             <div class="nav-top-links">
                 <SidebarLink to="/dashboard" icon="fas fa-house-chimney">Dashboard</SidebarLink>
                 <SidebarLink to="/" icon="fa-solid fa-warehouse">Inventories</SidebarLink>
-                <SidebarLink to="/" icon="fa-solid fa-barcode">Barcodes</SidebarLink>
-                <SidebarLink to="/" icon="fa-solid fa-truck-field">Suppliers</SidebarLink>
+                <SidebarLink to="/barcodes" icon="fa-solid fa-barcode">Barcodes</SidebarLink>
+                <SidebarLink to="/suppliers" icon="fa-solid fa-truck-field">Suppliers</SidebarLink>
                 <SidebarLink to="/" icon="fa-solid fa-users-gear">User Roles</SidebarLink>
             </div>
             <div class="bottom-link">

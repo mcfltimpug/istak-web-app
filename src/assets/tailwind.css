@@ -144,12 +144,40 @@
     [type="radio"] {
         @apply rounded-full border-neutrals-4 text-secondary-6 focus:ring-brand-6;
     }
+    .file-design{
+        @apply inline-flex items-center justify-center py-1 px-3 border border-transparent rounded-md text-xs font-medium uppercase text-white cursor-pointer
+        bg-gradient-to-r from-brand-6 to-secondary-6 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-6 hover:from-brand-5 hover:to-secondary-5;
+    }
+
+    .assumpta-round-btn-gradient {
+        @apply inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-brand-6 rounded-full bg-gradient-to-br from-brand-6 to-secondary-6 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-6 hover:from-brand-5 hover:to-secondary-5;
+    }
+
+    .assumpta-round-btn-span{
+        @apply py-3 px-3.5 h-full inline-flex items-center justify-center  transition-all ease-in duration-75 bg-white rounded-full text-xs font-medium uppercase;
+    }
+
+    .assumpta-round-btn-edit {
+        @apply inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-brand-6 rounded-full bg-brand-6 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-6 hover:bg-brand-5;
+    }
+   
+    .assumpta-round-btn-delete {
+        @apply inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-brand-6 rounded-full bg-error-6 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-error-6 hover:bg-error-5;
+    }
+
+    .assumpta-more-info-btn {
+        @apply inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-neutrals-5  rounded bg-neutrals-5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutrals-5  hover:bg-neutrals-4;
+    }
+
+    .assumpta-more-info-span{
+        @apply py-1.5 px-3.5 h-full inline-flex items-center justify-center  transition-all ease-in duration-75 bg-white rounded text-xs font-medium uppercase;
+    }
 
     .assumpta-gradient {
         @apply inline-flex items-center justify-center py-3 px-5 border border-transparent rounded-md text-xs font-medium uppercase text-white
         bg-gradient-to-r from-brand-6 to-secondary-6 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-6 hover:from-brand-5 hover:to-secondary-5;
     }
-
+    
     .assumpta-btn-secondary {
         @apply inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-brand-6 rounded-lg bg-gradient-to-br from-brand-6 to-secondary-6 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-6 hover:from-brand-5 hover:to-secondary-5;
     }
@@ -173,6 +201,10 @@
     }
     .sidebar-item-active {
         @apply bg-gradient-to-br from-brand-6 to-secondary-6;
+    }
+
+    .istak-card{
+        @apply border border-transparent rounded-md text-xs  uppercase bg-neutrals-1 shadow-sm;
     }
 }
 

@@ -33,7 +33,7 @@
 </script>
 
 <template>
-    <router-link :to="to" class="link text-secondary-6 py-5 pl-3 hover:text-brand-6 hover:border-l-4 hover:border-brand-6 active:border-l-4 active:border-brand-6" :class="{ active: isActive }">
+    <router-link :to="to" class="link text-secondary-6 py-5 my-2 pl-3 hover:text-brand-6 hover:border-l-4 hover:border-brand-6 focus:border-l-4 focus:border-brand-6 focus:text-brand-6" :class="{ active: isActive }">
         <font-awesome-icon class="icon" :class="icon" />
         <transition name="fade">
             <span v-if="!collapsed">
