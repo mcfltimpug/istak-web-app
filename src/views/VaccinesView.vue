@@ -1,9 +1,7 @@
 <template>
     <div class="vax flex flex-col justify-center m-3">
         <!-- crud modals -->
-        <EditModal @close="toggleModal" :modalActiveEdit="modalActiveEdit"/>
-        <AddModal @close="toggleModal2" :modalActiveAdd="modalActiveAdd"/>   
-        <DeleteModal @close="toggleModal3" :modalActiveDelete="modalActiveDelete"/> 
+        <AddModal @close="toggleModalAdd" :modalActiveAdd="modalActiveAdd"/>   
 
         <!-- remove top nav if available -->
         <div class="top-nav flex justify-between flex-row bg-neutrals-1 rounded-2xl py-2 px-3 overflow-x-auto">
@@ -40,7 +38,7 @@
                     </div>
                 </div>
                 <div class="bar-right flex flex-row gap-2">
-                    <div @click="toggleModal2" class="ivt-add-item ">
+                    <div @click="toggleModalAdd" class="ivt-add-item ">
                         <a href="javascript:void(0)" class="assumpta-btn-secondary cursor-pointer">
                             <span class=" assumpta-btn-span px-12">Add Item</span>
                         </a>
@@ -65,6 +63,8 @@
                 </div>
             </div>
             <hr class="">
+
+            <!-- table -->
             <div class="ivt-list py-2">
                 <table class="table-auto w-full rounded-lg">
                     <thead class="bg-neutrals-4">
@@ -80,8 +80,10 @@
                             <th class="font-medium p-3">Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr class="text-center text-sm uppercase shadow-sm">
+                    
+                    <!-- <tbody>
+                     
+                         <tr class="text-center text-sm uppercase shadow-sm">
                             <td><input type="checkbox" name="" id="" class="w-5 h-5 border border-neutrals-6"></td>
                             <td>0123456789</td>
                             <td>NOBIVAC DHPPI L4 (CANINE)</td>
@@ -114,7 +116,8 @@
                                     </div>
                                 </div>
                             </td>
-                        </tr>
+                        </tr> 
+                      
                         <tr class="" :class="isOpen ? 'd-block' : 'hidden'">
                             <td class="text-center bg-neutrals-4 p-5" colspan="9">
                                 <div class="flex flex-wrap justify-center gap-20">
@@ -158,11 +161,19 @@
                                     </div>
                                 </div>
                             </td>
-                        </tr>
-
-                    </tbody>
+                        </tr> 
+                    </tbody>  -->
+                    <InventoryItemList />
+                    <InventoryItemList />
+                    <InventoryItemList />
+                    <InventoryItemList />
+                    <InventoryItemList />
+                    <InventoryItemList />
+                    <InventoryItemList />
+                    <InventoryItemList />
                 </table>
             </div>
+            
         </div>
 
     </div>
@@ -171,47 +182,30 @@
 
 <script>
     // @ is an alias to /src
-    import EditModal from '@/components/inventory/EditModal.vue'
     import AddModal from '@/components/inventory/AddModal.vue'
-    import DeleteModal from '@/components/inventory/DeleteModal.vue'
+    import InventoryItemList from '@/components/inventory/InventoryItemList.vue'
 
-    import {
-        ref
-    } from 'vue'
+     import {
+         ref
+     } from 'vue'
+
 
     export default {
         name: 'VaccinesView',
-        data: () => {
-            return {
-                isOpen: false
-            }
-        },
         components: {
-            EditModal, AddModal, DeleteModal
+            AddModal,
+            InventoryItemList
         },
-        setup() {
-            const modalActiveEdit = ref(false);
-            const modalActiveAdd = ref(false);
-            const modalActiveDelete = ref(false);
+         setup() {
+             const modalActiveAdd = ref(false);
+             const toggleModalAdd = () => {
+                 modalActiveAdd.value = !modalActiveAdd.value;
+             }
 
-            const toggleModal = () => {
-                modalActiveEdit.value = !modalActiveEdit.value;
-            }
-            const toggleModal2 = () => {
-                modalActiveAdd.value = !modalActiveAdd.value;
-            }
-            const toggleModal3 = () => {
-                modalActiveDelete.value = !modalActiveDelete.value;
-            }
-
-            return {
-                modalActiveEdit,
-                toggleModal,
-                modalActiveAdd,
-                toggleModal2,
-                modalActiveDelete,
-                toggleModal3
-            };
+         return {
+                 modalActiveAdd,
+                toggleModalAdd,
+             };
         }
 
     }
