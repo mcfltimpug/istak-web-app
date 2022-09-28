@@ -42,16 +42,21 @@
           <div class="flex justify-center w-full">
             <img src="../assets/assumpta-horizontal-logo.png" alt="" class="h-12 mb-10">
           </div>
+          <div class="bg-error-1 border border-error-4 text-error-7 px-4 py-3 rounded relative mb-4" role="alert"
+            v-if="errMsg">
+            <strong class="font-bold">Oops!</strong>
+            <span class="block sm:inline ml-2"> {{ errMsg }}</span>
+          </div>
           <div class="w-full flex flex-col gap-3 mb-4">
             <div class="relative flex items-center">
-              <input type="text" name="input" class="pr-3 pl-10" placeholder="Enter Username">
+              <input type="text" v-model="email" name="email" class="pr-3 pl-10" placeholder="Enter Email">
             </div>
             <img src="../assets/user_icon.svg" class="w-5 h-5 absolute ml-3 mt-2" alt="User Icon" />
           </div>
           <div class="w-full flex flex-col gap-3 mb-4">
             <div class="w-full">
-              <label for="input" class="block w-full text-sm font-medium text-neutrals-9 mb-2"></label>
-              <input type="text" name="input" class="pr-3 pl-10" placeholder="Enter Password">
+              <label for="password" class="block w-full text-sm font-medium text-neutrals-9 mb-2"></label>
+              <input type="password" v-model="password" name="password" class="pr-3 pl-10" placeholder="Enter Password">
             </div>
             <img src="../assets/user_pass_icon.svg" class="w-5 h-5 absolute ml-3 mt-4" alt="UserPass Icon" />
           </div>
@@ -67,8 +72,12 @@
             </div>
           </div>
           <div class="w-full">
-            <button type="submit" class="font-bold block w-full px-4 py-2 mt-4 text-sm assumpta-gradient mb-3">Sign
+            <button @click="register" class="font-bold block w-full px-4 py-2 mt-4 text-sm assumpta-gradient mb-3">Sign
               In</button>
+
+            <button @click="signInWithGoogle"
+              class="font-bold block w-full px-4 py-2 mt-4 text-sm assumpta-gradient mb-3">Sign
+              In with Google</button>
           </div>
 
 
@@ -126,11 +135,55 @@
 }
 </style>
 
-<script>
+<script setup>
 // @ is an alias to /src
+import { ref } from "vue";
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { useRouter } from "vue-router";
 
-export default {
-  name: 'IndexView',
+const email = ref('');
+const password = ref('');
+const errMsg = ref();
+const router = useRouter();
+
+const register = () => {
+  signInWithEmailAndPassword(getAuth(), email.value, password.value)
+    .then((data) => {
+      alert("Success!");
+      router.push('/dashboard');
+    })
+    .catch((er) => {
+      switch (er.code) {
+        case "auth/invalid-email":
+          errMsg.value = "Invalid Email";
+          break;
+        case "auth/user-not-found":
+          errMsg.value = "The email or mobile number you entered isn’t connected to an account.";
+          break;
+        case "auth/wrong-password":
+          errMsg.value = "Incorrect password";
+          break;
+        default:
+          errMsg.value = "Email or Password was incorrect.";
+          break;
+      }
+    });
 
 }
+
+const signInWithGoogle = () => {
+  const provider = new GoogleAuthProvider();
+  signInWithPopup(getAuth(), provider)
+    .then((result) => {
+      alert("Success!");
+      router.push('/dashboard');
+    })
+    .catch((err) => {
+
+    });
+
+
+}
+
+
 </script>

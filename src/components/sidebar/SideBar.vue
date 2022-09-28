@@ -21,7 +21,7 @@ export default {
     <div class="sidebar app shadow-lg flex flex-col bg-neutrals-1" :style="{ width: sidebarWidth }">
         <div class="nav-toggle w-full">
             <span class="collapse-icon cursor-pointer" :class="{ 'rotate-180': collapsed }" @click="toggleSidebar">
-                <i class="fa-solid fa-angles-left" />
+                <font-awesome-icon class="fa-solid fa-angles-left" />
             </span>
         </div>
         <div class="nav-logo flex justify-center my-5">
@@ -56,11 +56,45 @@ export default {
             </div>
             <div class="bottom-link">
                 <SidebarLink to="/" icon="fa-solid fa-user-gear">Account</SidebarLink>
-                <SidebarLink to="/" icon="fa-solid fa-right-from-bracket">Logout</SidebarLink>
+                <!-- <SidebarLink to="/" icon="fa-solid fa-right-from-bracket">Logout
+                </SidebarLink> -->
+                <button @click="handleSignOut" v-if="isLoggedIn"
+                    class="link text-secondary-6 py-5 my-2 pl-3 hover:text-brand-6 hover:border-l-4 hover:border-brand-6 focus:border-l-4 focus:border-brand-6 focus:text-brand-6"
+                    :class="{ active: isActive }">
+                    <font-awesome-icon class="fa-solid  fa-right-from-bracket mr-3" />
+                    Logout
+                </button>
             </div>
         </div>
     </div>
 </template>
+
+<script setup>
+import router from "@/router";
+import { getAuth, onAuthStateChanged, signOut } from "@firebase/auth";
+import { onMounted, ref } from "vue";
+
+const isLoggedIn = ref(false);
+
+let auth;
+onMounted(() => {
+    auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            isLoggedIn.value = true;
+        } else {
+            isLoggedIn.value = false;
+        }
+    });
+})
+
+const handleSignOut = () => {
+    signOut(auth).then(() => {
+        router.push("/")
+    });
+}
+
+</script>
 
 <style>
 .sidebar {
