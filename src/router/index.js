@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import IndexView from '../views/IndexView.vue'
 import DashboardView from '../views/DashboardView.vue'
 import VaccinesView from '../views/VaccinesView.vue'
+import BarcodesView from '../views/BarcodesView.vue'
 
 const routes = [
   {
@@ -27,6 +28,11 @@ const routes = [
     path: '/vaccines',
     name: 'Vaccines',
     component: VaccinesView
+  },
+  {
+    path: '/barcodes',
+    name: 'Barcodes',
+    component: BarcodesView
   },
   {
     path: '/about',
