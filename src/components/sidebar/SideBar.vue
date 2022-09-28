@@ -51,7 +51,7 @@ export default {
                 <SidebarLink to="/dashboard" icon="fas fa-house-chimney">Dashboard</SidebarLink>
                 <SidebarLink to="/" icon="fa-solid fa-warehouse">Inventories</SidebarLink>
                 <SidebarLink to="/barcodes" icon="fa-solid fa-barcode">Barcodes</SidebarLink>
-                <SidebarLink to="/" icon="fa-solid fa-truck-field">Suppliers</SidebarLink>
+                <SidebarLink to="/suppliers" icon="fa-solid fa-truck-field">Suppliers</SidebarLink>
                 <SidebarLink to="/" icon="fa-solid fa-users-gear">User Roles</SidebarLink>
             </div>
             <div class="bottom-link">

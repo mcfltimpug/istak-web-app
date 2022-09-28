@@ -4,6 +4,7 @@ import IndexView from '../views/IndexView.vue'
 import DashboardView from '../views/DashboardView.vue'
 import VaccinesView from '../views/VaccinesView.vue'
 import BarcodesView from '../views/BarcodesView.vue'
+import SuppliersView from '../views/SuppliersView.vue'
 
 const routes = [
   {
@@ -33,6 +34,11 @@ const routes = [
     path: '/barcodes',
     name: 'Barcodes',
     component: BarcodesView
+  },
+  {
+    path: '/suppliers',
+    name: 'Suppliers',
+    component: SuppliersView
   },
   {
     path: '/about',
