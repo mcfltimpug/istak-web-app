@@ -11,7 +11,7 @@ export default {
 </script>
 <template>
 
-  <div class="login-page">
+  <div class="login-page -ml-[13.5rem]">
     <div class="navbar bg-neutrals-2 flex flex-col">
       <div class="w-full bg-gradient-to-r from-brand-6 to-secondary-6">
         <span class="m-5"></span>

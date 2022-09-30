@@ -1,7 +1,7 @@
 <template>
-  <SideBar />
+  <SideBar v-if="$route.meta.requiresAuth"/>
   <div :style="{ 'margin-left': sidebarWidth}">
-    <router-view />
+    <router-view class="" />
   </div>
 </template>
 
@@ -32,6 +32,9 @@ onMounted(() => {
 
 export default {
   name: 'HomeView',
+  // data: () => {
+  //   seen:true
+  // },
   components: { SideBar },
   setup() {
     return { sidebarWidth }

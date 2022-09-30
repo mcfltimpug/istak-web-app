@@ -3,7 +3,7 @@ export default {
   name: 'IndexView',
   computed: {
     shouldShowSidebar() {
-      return this.$route.meta.sidebar !== true;
+      return this.$route.meta.sidebar !== false;
     }
   }
 
@@ -11,7 +11,7 @@ export default {
 </script>
 <template>
 
-  <div class="login-page">
+  <div class="login-page -ml-[13.5rem]">
     <div class="navbar bg-neutrals-2 flex flex-col">
       <div class="w-full bg-gradient-to-r from-brand-6 to-secondary-6">
         <span class="m-5"></span>
@@ -22,7 +22,7 @@ export default {
           <img src="../assets/assumpta-horizontal-logo.png" alt="" class="h-12">
         </div>
         <div class="">
-          <a href="" class="text-sm uppercase text-brand-6 p-5 mr-8 border-b-4 border-brand-6 hover:bg-neutrals-1">Log
+          <a href="/" class="text-sm uppercase text-brand-6 p-5 mr-8 border-b-4 border-brand-6 hover:bg-neutrals-1">Log
             In</a>
           <button class="assumpta-btn-secondary w-52">
             <span class="w-full assumpta-btn-span uppercase text-xs">

@@ -15,7 +15,7 @@ const routes = [
     name: 'home',
     component: IndexView,
     meta: {
-      sidebar: true
+      requiresAuth: false,
     }
   },
   {
@@ -23,7 +23,7 @@ const routes = [
     name: 'register',
     component: Register,
     meta: {
-      sidebar: true
+      requiresAuth: false,
     }
   },
   {
