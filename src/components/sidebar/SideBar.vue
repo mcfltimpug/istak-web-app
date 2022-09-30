@@ -14,11 +14,17 @@ export default {
             sidebarWidth,
         };
     },
+    computed: {
+        currentRouteName() {
+            return this.$route.name;
+        }
+    }
+
 };
 </script>
 
 <template>
-    <div class="sidebar app shadow-lg flex flex-col bg-neutrals-1" :style="{ width: sidebarWidth }">
+    <div class="sidebar app shadow-lg flex flex-col bg-neutrals-1" id="sidebar" :style="{ width: sidebarWidth }">
         <div class="nav-toggle w-full">
             <span class="collapse-icon cursor-pointer" :class="{ 'rotate-180': collapsed }" @click="toggleSidebar">
                 <font-awesome-icon class="fa-solid fa-angles-left" />
@@ -40,7 +46,7 @@ export default {
             </div>
             <div class="user-info text-left" v-if="!collapsed">
                 <p class="text-xs text-neutrals-1">
-                    Juan Dela Cruz
+                    {{ userDisplayName }}
                 </p>
 
                 <!-- <p class="text-xs text-neutrals-2">Cainta</p> -->
@@ -75,13 +81,16 @@ import { getAuth, onAuthStateChanged, signOut } from "@firebase/auth";
 import { onMounted, ref } from "vue";
 
 const isLoggedIn = ref(false);
+const userDisplayName = ref();
 
 let auth;
 onMounted(() => {
     auth = getAuth();
     onAuthStateChanged(auth, (user) => {
         if (user) {
+            userDisplayName.value = user.displayName;
             isLoggedIn.value = true;
+
         } else {
             isLoggedIn.value = false;
         }

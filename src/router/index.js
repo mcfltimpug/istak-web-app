@@ -6,6 +6,7 @@ import DashboardView from '../views/DashboardView.vue'
 import VaccinesView from '../views/VaccinesView.vue'
 import BarcodesView from '../views/BarcodesView.vue'
 import SuppliersView from '../views/SuppliersView.vue'
+import Register from '../views/Register.vue'
 
 
 const routes = [
@@ -13,7 +14,17 @@ const routes = [
     path: '/',
     name: 'home',
     component: IndexView,
-
+    meta: {
+      sidebar: true
+    }
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: Register,
+    meta: {
+      sidebar: true
+    }
   },
   {
     path: '/design-system',

@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'IndexView',
+  name: 'Register',
   computed: {
     shouldShowSidebar() {
       return this.$route.meta.sidebar !== true;
@@ -58,6 +58,7 @@ export default {
             <strong class="font-bold">Oops!</strong>
             <span class="block sm:inline ml-2"> {{ errMsg }}</span>
           </div>
+          <h1 class="mb-5 text-center font-bold uppercase">Register</h1>
           <div class="w-full flex flex-col gap-3 mb-4">
             <div class="relative flex items-center">
               <input type="text" v-model="email" name="email" class="pr-3 pl-10" placeholder="Enter Email">
@@ -83,12 +84,10 @@ export default {
             </div>
           </div>
           <div class="w-full">
-            <button @click="register" class="font-bold block w-full px-4 py-2 mt-4 text-sm assumpta-gradient mb-3">Sign
-              In</button>
+            <button @click="register"
+              class="font-bold block w-full px-4 py-2 mt-4 text-sm assumpta-gradient mb-3">Register
+            </button>
 
-            <button @click="signInWithGoogle"
-              class="font-bold block w-full px-4 py-2 mt-4 text-sm assumpta-gradient mb-3">Sign
-              In with Google</button>
           </div>
 
 
@@ -149,7 +148,7 @@ export default {
 <script setup>
 // @ is an alias to /src
 import { ref } from "vue";
-import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useRouter } from "vue-router";
 
 const email = ref('');
@@ -158,7 +157,7 @@ const errMsg = ref();
 const router = useRouter();
 
 const register = () => {
-  signInWithEmailAndPassword(getAuth(), email.value, password.value)
+  createUserWithEmailAndPassword(getAuth(), email.value, password.value)
     .then((data) => {
       alert("Success!");
       router.push('/dashboard');
